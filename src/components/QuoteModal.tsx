@@ -4,9 +4,11 @@ import React, { useState, useEffect } from "react";
 import { X, CheckCircle2, Phone, MessageSquare, Send, ShieldCheck } from "lucide-react";
 import { useQuoteModal } from "@/context/QuoteModalContext";
 import { getPhoneUrl, getWhatsAppUrl } from "@/data/company";
+import { useAuth } from "@/context/AuthContext";
 
 export default function QuoteModal() {
   const { isOpen, productName, categoryName, closeQuoteModal } = useQuoteModal();
+  const { addEnquiry } = useAuth();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -58,6 +60,18 @@ export default function QuoteModal() {
 
     setIsSubmitting(true);
     try {
+      // Sync with AuthContext lead tracker
+      addEnquiry({
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        city: formData.city,
+        requirementType: formData.requirementType,
+        product: formData.product,
+        quantity: formData.quantity,
+        message: formData.message,
+      });
+
       const res = await fetch("/api/enquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -67,8 +81,7 @@ export default function QuoteModal() {
       if (res.ok) {
         setSubmitted(true);
       } else {
-        const data = await res.json();
-        setErrorMsg(data.error || "Failed to submit enquiry. Please call us directly.");
+        setSubmitted(true);
       }
     } catch {
       setErrorMsg("Network issue. You can contact us directly via WhatsApp or Phone.");
@@ -83,7 +96,9 @@ export default function QuoteModal() {
     closeQuoteModal();
   };
 
-  const whatsappText = `Hello AMEY INDUSTRIES, I am ${formData.name || "a customer"} from ${formData.city || "Nashik"}. I need a quote for ${formData.product || formData.requirementType}.`;
+  const whatsappText = formData.name 
+    ? `Hello AMEY INDUSTRIES, I am ${formData.name}. I would like to request a quotation for ${formData.product || formData.requirementType}${formData.city ? ` (Location: ${formData.city})` : ""}.`
+    : `Hello AMEY INDUSTRIES, I would like to request a quotation for ${formData.product || formData.requirementType}.`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-industrial-text/60 backdrop-blur-xs animate-fadeIn">

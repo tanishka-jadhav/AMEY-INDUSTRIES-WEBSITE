@@ -3,8 +3,9 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowRight, Phone, MessageSquare } from "lucide-react";
+import { Menu, X, ArrowRight, Phone, MessageSquare, User, ShieldCheck } from "lucide-react";
 import { useQuoteModal } from "@/context/QuoteModalContext";
+import { useAuth } from "@/context/AuthContext";
 import { getPhoneUrl, getWhatsAppUrl } from "@/data/company";
 
 const NAV_LINKS = [
@@ -22,6 +23,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { openQuoteModal } = useQuoteModal();
+  const { user } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -95,8 +97,30 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Desktop CTA */}
+        {/* Desktop CTA & Auth Links */}
         <div className="hidden lg:flex items-center space-x-3">
+          {user ? (
+            <Link
+              href={user.role === "admin" ? "/admin" : "/account"}
+              className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-lg text-xs font-bold text-industrial-text bg-industrial-mutedBg hover:bg-industrial-border border border-industrial-border transition-colors"
+            >
+              {user.role === "admin" ? (
+                <ShieldCheck className="w-4 h-4 text-industrial-green" />
+              ) : (
+                <User className="w-4 h-4 text-industrial-green" />
+              )}
+              <span>{user.role === "admin" ? "Admin Portal" : "Account"}</span>
+            </Link>
+          ) : (
+            <Link
+              href="/login"
+              className="inline-flex items-center space-x-1 px-3 py-2 rounded-lg text-xs font-bold text-industrial-textMuted hover:text-industrial-text transition-colors"
+            >
+              <User className="w-4 h-4 mr-1 text-industrial-green" />
+              <span>Sign In</span>
+            </Link>
+          )}
+
           <button
             onClick={() => openQuoteModal()}
             className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-bold text-white bg-industrial-green hover:bg-industrial-greenDark shadow-sm transition-all"
@@ -147,6 +171,18 @@ export default function Navbar() {
                 </Link>
               );
             })}
+
+            <Link
+              href={user ? (user.role === "admin" ? "/admin" : "/account") : "/login"}
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-4 py-3.5 rounded-xl text-base font-bold text-industrial-green bg-industrial-lightGreenBg flex items-center justify-between min-h-[44px] border border-emerald-200"
+            >
+              <div className="flex items-center space-x-2">
+                {user?.role === "admin" ? <ShieldCheck className="w-5 h-5" /> : <User className="w-5 h-5" />}
+                <span>{user ? (user.role === "admin" ? "Admin Portal" : "Customer Account") : "Sign In / Register"}</span>
+              </div>
+              <ArrowRight className="w-4 h-4 text-industrial-green" />
+            </Link>
           </div>
 
           <div className="pt-4 border-t border-industrial-border space-y-3">

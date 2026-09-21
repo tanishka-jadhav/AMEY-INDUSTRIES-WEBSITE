@@ -25,7 +25,7 @@ export function getGoogleMapsUrl(): string {
 }
 
 export function getWhatsAppUrl(customMessage?: string): string {
-  const defaultText = "Hello AMEY INDUSTRIES, I am interested in your products/services. I would like to discuss my project requirement and get a quotation.";
+  const defaultText = "Hello AMEY INDUSTRIES, I am interested in your outdoor fitness and playground equipment. Please share product catalog and quotation details.";
   const encoded = encodeURIComponent(customMessage || defaultText);
   return `https://wa.me/${COMPANY_DETAILS.whatsappNumber}?text=${encoded}`;
 }

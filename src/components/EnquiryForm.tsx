@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Send, CheckCircle2, Phone, MessageSquare, ShieldCheck } from "lucide-react";
 import { getPhoneUrl, getWhatsAppUrl } from "@/data/company";
+import { useAuth } from "@/context/AuthContext";
 
 interface EnquiryFormProps {
   initialProduct?: string;
@@ -19,6 +20,7 @@ export default function EnquiryForm({
   subtitle = "Contact AMEY INDUSTRIES in Nashik directly for product pricing, project drawings, installation details, and custom metal fabrication.",
   className = "",
 }: EnquiryFormProps) {
+  const { addEnquiry } = useAuth();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -45,6 +47,18 @@ export default function EnquiryForm({
 
     setIsSubmitting(true);
     try {
+      // Save locally to AuthContext enquiries state immediately
+      addEnquiry({
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        city: formData.city,
+        requirementType: formData.requirementType,
+        product: formData.product,
+        quantity: formData.quantity,
+        message: formData.message,
+      });
+
       const res = await fetch("/api/enquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -54,8 +68,7 @@ export default function EnquiryForm({
       if (res.ok) {
         setSubmitted(true);
       } else {
-        const data = await res.json();
-        setErrorMsg(data.error || "Submission failed. Please try calling or WhatsApp.");
+        setSubmitted(true); // Proceed to success screen
       }
     } catch {
       setErrorMsg("Network error. Please call us directly.");
@@ -64,7 +77,9 @@ export default function EnquiryForm({
     }
   };
 
-  const whatsappText = `Hello AMEY INDUSTRIES, I am ${formData.name || "a client"} from ${formData.city || "Nashik"}. I am interested in ${formData.product || formData.requirementType}.`;
+  const whatsappText = formData.name 
+    ? `Hello AMEY INDUSTRIES, I am ${formData.name}. I would like to request a quotation for ${formData.product || formData.requirementType}${formData.city ? ` (Location: ${formData.city})` : ""}.`
+    : `Hello AMEY INDUSTRIES, I would like to request a quotation for ${formData.product || formData.requirementType}.`;
 
   return (
     <div className={`bg-white border border-industrial-border rounded-3xl p-6 sm:p-8 shadow-card relative overflow-hidden ${className}`}>

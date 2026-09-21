@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 import QuoteModal from "@/components/QuoteModal";
 import { QuoteModalProvider } from "@/context/QuoteModalContext";
+import { AuthProvider } from "@/context/AuthContext";
 import { COMPANY_DETAILS } from "@/data/company";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -92,14 +93,16 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col bg-industrial-bg text-industrial-text antialiased selection:bg-industrial-green selection:text-white">
-        <QuoteModalProvider>
-          <TopBanner />
-          <Navbar />
-          <main className="flex-grow pb-16 sm:pb-0">{children}</main>
-          <Footer />
-          <FloatingCTA />
-          <QuoteModal />
-        </QuoteModalProvider>
+        <AuthProvider>
+          <QuoteModalProvider>
+            <TopBanner />
+            <Navbar />
+            <main className="flex-grow pb-16 sm:pb-0">{children}</main>
+            <Footer />
+            <FloatingCTA />
+            <QuoteModal />
+          </QuoteModalProvider>
+        </AuthProvider>
       </body>
     </html>
   );
