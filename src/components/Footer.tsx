@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { MapPin, Phone, Mail, MessageSquare, Download, ArrowRight, ShieldCheck, ExternalLink } from "lucide-react";
+import { MapPin, Phone, Mail, MessageSquare, ArrowRight, ShieldCheck, ExternalLink } from "lucide-react";
 import { COMPANY_DETAILS, getPhoneUrl, getEmailUrl, getWhatsAppUrl, getGoogleMapsUrl } from "@/data/company";
 import { useQuoteModal } from "@/context/QuoteModalContext";
 
@@ -10,10 +10,10 @@ export default function Footer() {
   const { openQuoteModal } = useQuoteModal();
 
   return (
-    <footer className="bg-[#142217] text-slate-200 pt-16 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-t border-emerald-950">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 relative z-10">
+    <footer className="bg-[#142217] text-slate-200 pt-16 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-t border-emerald-950 text-left">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 relative z-10">
         {/* Col 1: Brand Info */}
-        <div className="lg:col-span-2 space-y-4 text-left">
+        <div className="lg:col-span-2 space-y-4">
           <Link href="/" className="flex items-center space-x-3 group inline-block">
             <div className="w-10 h-10 rounded-lg bg-emerald-700 text-white font-black text-xl flex items-center justify-center shadow-sm">
               AI
@@ -40,19 +40,18 @@ export default function Footer() {
               <span>Get Project Quote</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
             </button>
-            <a
-              href="/catalogue/amey-industries-catalogue.pdf"
-              download
+            <button
+              onClick={() => openQuoteModal("", "Catalogue Request")}
               className="inline-flex items-center px-4 py-2.5 rounded-lg bg-emerald-950/80 hover:bg-emerald-900 text-slate-200 text-xs font-semibold border border-emerald-800 transition-colors"
             >
-              <Download className="w-3.5 h-3.5 mr-1.5 text-emerald-400" />
-              <span>Download Catalogue</span>
-            </a>
+              <MessageSquare className="w-3.5 h-3.5 mr-1.5 text-emerald-400" />
+              <span>Request Product Catalogue</span>
+            </button>
           </div>
         </div>
 
         {/* Col 2: Navigation Links */}
-        <div className="space-y-3 text-left">
+        <div className="space-y-3">
           <h4 className="text-xs font-extrabold uppercase tracking-widest text-emerald-400 border-b border-emerald-900 pb-2">
             Navigation
           </h4>
@@ -95,25 +94,8 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Col 3: Product Verticals */}
-        <div className="space-y-3 text-left">
-          <h4 className="text-xs font-extrabold uppercase tracking-widest text-emerald-400 border-b border-emerald-900 pb-2">
-            Product Verticals
-          </h4>
-          <ul className="space-y-2 text-xs text-slate-300">
-            <li>Outdoor Cross Trainer</li>
-            <li>Outdoor Air Walker</li>
-            <li>Leg Press & Waist Twister</li>
-            <li>Shoulder Wheel & Multi-Gym</li>
-            <li>Children Slides & Swings</li>
-            <li>Seesaws & Multi-Play Units</li>
-            <li>Custom Structural Sheds</li>
-            <li>Industrial Steel Frames</li>
-          </ul>
-        </div>
-
-        {/* Col 4: Direct Contact & Location */}
-        <div className="space-y-3 text-left">
+        {/* Col 3: Direct Contact & Location */}
+        <div className="space-y-3">
           <h4 className="text-xs font-extrabold uppercase tracking-widest text-emerald-400 border-b border-emerald-900 pb-2">
             Direct Contact & Location
           </h4>

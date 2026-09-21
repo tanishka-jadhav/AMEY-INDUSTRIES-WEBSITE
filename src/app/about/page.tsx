@@ -62,44 +62,11 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Factual Core Pillars */}
-      <div className="bg-industrial-bg p-8 sm:p-12 rounded-3xl border border-industrial-border space-y-8">
-        <SectionHeader
-          badge="Manufacturing Philosophy"
-          title="What Defines AMEY INDUSTRIES"
-          subtitle="We focus on factual engineering standards rather than empty superlatives."
-        />
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="p-6 rounded-2xl bg-white border border-industrial-border shadow-subtle space-y-2">
-            <ShieldCheck className="w-8 h-8 text-industrial-green" />
-            <h4 className="text-lg font-bold text-industrial-text">Heavy Metal Framing</h4>
-            <p className="text-xs text-industrial-textMuted leading-relaxed">
-              We utilize thick-walled tubular steel pipes designed for structural rigidity and high safety margins.
-            </p>
-          </div>
-          <div className="p-6 rounded-2xl bg-white border border-industrial-border shadow-subtle space-y-2">
-            <CheckCircle2 className="w-8 h-8 text-industrial-green" />
-            <h4 className="text-lg font-bold text-industrial-text">All-Weather Protection</h4>
-            <p className="text-xs text-industrial-textMuted leading-relaxed">
-              Multi-layer surface treatment with anti-corrosive primer coating designed for rainy and sun-exposed Indian climates.
-            </p>
-          </div>
-          <div className="p-6 rounded-2xl bg-white border border-industrial-border shadow-subtle space-y-2">
-            <Wrench className="w-8 h-8 text-industrial-green" />
-            <h4 className="text-lg font-bold text-industrial-text">Custom Fabrication</h4>
-            <p className="text-xs text-industrial-textMuted leading-relaxed">
-              Capability to execute industrial metalwork, sheds, and custom play equipment based on client specifications.
-            </p>
-          </div>
-        </div>
-      </div>
-
       {/* Contact Cards */}
       <div className="p-8 rounded-3xl bg-white border border-industrial-border shadow-card flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="space-y-1">
           <h3 className="text-2xl font-extrabold text-industrial-text">Direct Enquiry & Consultation</h3>
-          <p className="text-xs text-industrial-textMuted">Contact Mr. Prasad Suresh Jadhav directly to discuss equipment or request a quotation.</p>
+          <p className="text-xs text-industrial-textMuted">Contact Mr. Prasad Suresh Jadhav directly to discuss equipment specifications or request a quotation.</p>
         </div>
         <div className="flex flex-wrap gap-3 shrink-0">
           <a
@@ -122,7 +89,7 @@ export default function AboutPage() {
       </div>
 
       {/* Lead Form */}
-      <div className="max-w-4xl mx-auto pt-8">
+      <div className="max-w-4xl mx-auto pt-4">
         <EnquiryForm title="Send Us Your Project Enquiry" />
       </div>
     </div>
