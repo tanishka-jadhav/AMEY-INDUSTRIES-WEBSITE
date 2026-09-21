@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import SectionHeader from "@/components/SectionHeader";
 import ProjectLightbox from "@/components/ProjectLightbox";
 import VisualFallbackImage from "@/components/VisualFallbackImage";
@@ -20,13 +21,30 @@ export default function ProjectsPage() {
       : PROJECTS.filter((p) => p.category === activeFilter);
 
   return (
-    <div className="space-y-16 py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left">
-      {/* Page Header */}
-      <SectionHeader
-        badge="Executed Work Portfolio"
-        title="See Our Work"
-        subtitle="Explore equipment and projects supplied and installed by AMEY INDUSTRIES across Nashik and Maharashtra."
-      />
+    <div className="space-y-12 py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left">
+      {/* Category Hero with Installation Background Visual */}
+      <div className="relative rounded-3xl p-8 sm:p-12 shadow-card space-y-4 overflow-hidden bg-industrial-charcoal text-white">
+        <Image
+          src="/images/projects/green-gym-installation-nashik.jpg"
+          alt="AMEY INDUSTRIES Site Installation Portfolio"
+          fill
+          priority
+          className="object-cover object-center opacity-30 transform scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-industrial-charcoal via-industrial-charcoal/85 to-transparent z-0" />
+
+        <div className="relative z-10 space-y-4 max-w-3xl">
+          <span className="inline-block text-xs font-mono font-bold uppercase tracking-widest text-industrial-freshGreen bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+            AMEY INDUSTRIES • PORTFOLIO
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+            Executed Projects & Installations
+          </h1>
+          <p className="text-base text-industrial-mutedBg leading-relaxed font-normal">
+            Real-world Green Gym, playground, and industrial fabrication projects installed across Nashik and Maharashtra.
+          </p>
+        </div>
+      </div>
 
       {/* Filter Tabs */}
       <div className="flex flex-wrap justify-center gap-2.5">

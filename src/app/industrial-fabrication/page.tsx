@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import SectionHeader from "@/components/SectionHeader";
 import EnquiryForm from "@/components/EnquiryForm";
 import ProductCard from "@/components/ProductCard";
@@ -14,12 +15,12 @@ export default function IndustrialFabricationPage() {
   const fabProducts = PRODUCTS.filter((p) => p.category === "industrial-fabrication");
 
   const FABRICATION_PROCESS = [
-    { num: "01", title: "Requirement & Drawing", desc: "Share your structural requirements, sketches, or technical specifications." },
-    { num: "02", title: "Technical Discussion", desc: "Discussion with Mr. Prasad Suresh Jadhav regarding material selection & load parameters." },
-    { num: "03", title: "Design & Quotation", desc: "Finalizing component specs, metal thickness, finishing, and project quotation." },
-    { num: "04", title: "Precision Fabrication", desc: "Cutting, MIG/TIG welding, frame assembly, and quality structural fabrication in Nashik." },
-    { num: "05", title: "Finishing & Coating", desc: "Surface preparation, anti-rust primer application, and heavy-duty protective paint/powder coat." },
-    { num: "06", title: "Delivery & Installation", desc: "Safe transport to your industrial site or project location with installation support." },
+    { num: "01", title: "Requirement & Drawing", desc: "Share your structural requirements or technical sketches." },
+    { num: "02", title: "Technical Discussion", desc: "Consultation with Prasad Suresh Jadhav regarding steel grades & load specs." },
+    { num: "03", title: "Design & Quotation", desc: "Finalizing specs, metal thickness, finish, and quotation." },
+    { num: "04", title: "Precision Fabrication", desc: "Cutting, MIG/TIG welding, and frame assembly in Nashik." },
+    { num: "05", title: "Finishing & Coating", desc: "Surface prep, anti-rust primer, and protective powder coat." },
+    { num: "06", title: "Delivery & Installation", desc: "Safe site transport and installation support." },
   ];
 
   const CAPABILITIES = [
@@ -34,36 +35,47 @@ export default function IndustrialFabricationPage() {
   const whatsappMsg = "Hello AMEY INDUSTRIES, I have an industrial fabrication requirement and would like to discuss the project drawings and quotation.";
 
   return (
-    <div className="space-y-16 py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left">
-      {/* Hero Banner */}
-      <div className="bg-white border border-industrial-border rounded-3xl p-8 sm:p-12 shadow-card space-y-4 relative overflow-hidden">
-        <span className="text-xs font-bold uppercase tracking-widest text-industrial-green bg-industrial-lightGreenBg px-3 py-1 rounded-full border border-emerald-200">
-          AMEY INDUSTRIES Fabrication Division
-        </span>
-        <h1 className="text-4xl sm:text-5xl font-black text-industrial-text">
-          Industrial Metal Fabrication. <span className="text-industrial-green">Built Around Your Project Requirements.</span>
-        </h1>
-        <p className="text-base text-industrial-textMuted leading-relaxed max-w-3xl">
-          From custom steel frames and industrial sheds to structural components and specialized outdoor metalwork, AMEY INDUSTRIES in Nashik provides tailored fabrication services based on project drawings.
-        </p>
-        <div className="pt-2 flex flex-wrap gap-4">
-          <button
-            onClick={() => openQuoteModal("", "Industrial Fabrication")}
-            className="px-6 py-3 rounded-xl bg-industrial-green hover:bg-industrial-greenDark text-white font-extrabold text-sm shadow-subtle flex items-center space-x-2"
-          >
-            <Wrench className="w-4 h-4" />
-            <span>Discuss Fabrication Project</span>
-          </button>
+    <div className="space-y-12 py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left">
+      {/* Category Hero with Industrial Background Visual */}
+      <div className="relative rounded-3xl p-8 sm:p-12 shadow-card space-y-4 overflow-hidden bg-industrial-charcoal text-white">
+        <Image
+          src="/images/projects/industrial-fabrication-project.jpg"
+          alt="Industrial Metal Fabrication Assembly"
+          fill
+          priority
+          className="object-cover object-center opacity-30 transform scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-industrial-charcoal via-industrial-charcoal/85 to-transparent z-0" />
 
-          <a
-            href={getWhatsAppUrl(whatsappMsg)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm flex items-center space-x-2"
-          >
-            <MessageSquare className="w-4 h-4 fill-white/20" />
-            <span>WhatsApp Project Drawing</span>
-          </a>
+        <div className="relative z-10 space-y-4 max-w-3xl">
+          <span className="inline-block text-xs font-mono font-bold uppercase tracking-widest text-industrial-freshGreen bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+            AMEY INDUSTRIES • FABRICATION DIVISION
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+            Industrial Metal Fabrication
+          </h1>
+          <p className="text-base text-industrial-mutedBg leading-relaxed font-normal">
+            Custom steel frames, industrial sheds, and structural metalwork manufactured at our Nashik facility based on client drawings and technical specifications.
+          </p>
+          <div className="pt-2 flex flex-wrap gap-4">
+            <button
+              onClick={() => openQuoteModal("", "Industrial Fabrication")}
+              className="px-6 py-3.5 rounded-xl bg-industrial-green hover:bg-industrial-greenDark text-white font-extrabold text-sm shadow-subtle transition-all flex items-center space-x-2"
+            >
+              <Wrench className="w-4 h-4" />
+              <span>Discuss Fabrication Project</span>
+            </button>
+
+            <a
+              href={getWhatsAppUrl(whatsappMsg)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm flex items-center space-x-2 transition-all"
+            >
+              <MessageSquare className="w-4 h-4 fill-white/20" />
+              <span>WhatsApp Drawings</span>
+            </a>
+          </div>
         </div>
       </div>
 

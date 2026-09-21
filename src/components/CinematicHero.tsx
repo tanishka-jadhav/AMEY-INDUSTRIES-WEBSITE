@@ -72,32 +72,23 @@ export default function CinematicHero({
           </div>
 
           {/* Main Editorial Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-6">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1] mb-5">
             Built for <br />
-            <span className="text-industrial-lightGreenBg font-extrabold underline decoration-industrial-green/60 underline-offset-8">
+            <span className="text-industrial-lightGreenBg underline decoration-industrial-green/60 underline-offset-8">
               Real Spaces.
             </span>
           </h1>
 
-          {/* Supporting Copy */}
-          <p className="text-lg sm:text-xl text-industrial-mutedBg font-normal leading-relaxed mb-8 max-w-2xl">
-            Outdoor fitness equipment, playground solutions and custom industrial fabrication engineered and manufactured by{" "}
-            <strong className="text-white font-semibold">AMEY INDUSTRIES, Nashik</strong>.
+          {/* Supporting Copy - Short & Punchy */}
+          <p className="text-base sm:text-xl text-industrial-mutedBg font-normal leading-relaxed mb-8 max-w-xl">
+            Outdoor Fitness Equipment, Playground Solutions & Custom Metal Fabrication manufactured in Nashik.
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center gap-4 sm:gap-6 mb-10">
-            <Link
-              href="/green-gym"
-              className="inline-flex items-center justify-center px-7 py-3.5 bg-industrial-green hover:bg-industrial-greenDark text-white font-medium text-base rounded shadow-lg transition-all duration-200 group"
-            >
-              <span>EXPLORE GREEN GYM</span>
-              <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
-            </Link>
-
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-8">
             <button
               onClick={() => openQuoteModal()}
-              className="inline-flex items-center justify-center px-7 py-3.5 bg-white text-industrial-charcoal hover:bg-industrial-mutedBg font-semibold text-base rounded shadow-md transition-colors"
+              className="px-6 sm:px-8 py-3.5 bg-industrial-green hover:bg-industrial-greenDark text-white font-extrabold text-sm sm:text-base rounded-xl shadow-lg transition-all active:scale-95 min-h-[44px]"
             >
               GET A QUOTE
             </button>
@@ -106,11 +97,19 @@ export default function CinematicHero({
               href="https://wa.me/919850573181?text=Hello%20AMEY%20INDUSTRIES%2C%20I%20am%20interested%20in%20your%20outdoor%20fitness%20and%20playground%20equipment."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-[#25D366] hover:bg-[#1EBE57] text-white font-medium text-sm rounded shadow transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 bg-[#25D366] hover:bg-[#1EBE57] text-white font-extrabold text-sm sm:text-base rounded-xl shadow transition-all active:scale-95 min-h-[44px]"
             >
-              <MessageSquare className="w-4 h-4 fill-current" />
+              <MessageSquare className="w-5 h-5 fill-current" />
               <span>WhatsApp Us</span>
             </a>
+
+            <Link
+              href="/green-gym"
+              className="inline-flex items-center justify-center px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white font-bold text-sm rounded-xl border border-white/20 backdrop-blur-sm transition-all min-h-[44px]"
+            >
+              <span>Explore Green Gym</span>
+              <ArrowRight className="w-4 h-4 ml-1.5" />
+            </Link>
           </div>
 
           {/* Trust Badge Bar */}

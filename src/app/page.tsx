@@ -85,26 +85,26 @@ export default function HomePage() {
       <TrustStrip />
 
       {/* 3. SECTION: WHAT WE BUILD (Visual Editorial Cards) */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <section className="py-14 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-industrial-green uppercase mb-2">
               <span className="w-2 h-2 rounded-full bg-industrial-green"></span>
               <span>MANUFACTURING VERTICALS</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-industrial-charcoal tracking-tight">
-              What AMEY INDUSTRIES Builds.
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-industrial-charcoal tracking-tight">
+              What AMEY INDUSTRIES Builds
             </h2>
           </div>
-          <p className="mt-4 md:mt-0 text-sm text-industrial-textMuted max-w-md">
-            Three core divisions engineered for public space durability, physical safety, and custom metal fabrication.
+          <p className="mt-2 md:mt-0 text-xs sm:text-sm text-industrial-textMuted max-w-md">
+            Heavy-duty outdoor equipment engineered in Nashik for public parks, housing societies, and commercial projects.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {/* Card 1: Green Gym */}
-          <div className="group relative bg-white border border-industrial-border rounded-lg overflow-hidden shadow-subtle hover:shadow-elevated transition-all duration-300 flex flex-col justify-between">
-            <div className="relative h-64 w-full bg-industrial-mutedBg overflow-hidden img-zoom-container">
+          <div className="group relative bg-white border border-industrial-border rounded-2xl overflow-hidden shadow-subtle hover:shadow-elevated transition-all duration-300 flex flex-col justify-between">
+            <div className="relative h-56 sm:h-64 w-full bg-industrial-mutedBg overflow-hidden img-zoom-container">
               <Image
                 src={greenGymProducts[0]?.image || "/images/green-gym/outdoor-cross-trainer.jpg"}
                 alt="AMEY INDUSTRIES Green Gym Outdoor Fitness Equipment"
@@ -113,29 +113,29 @@ export default function HomePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-industrial-charcoal/80 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
-                <span className="text-xs font-mono uppercase bg-industrial-green/90 px-2.5 py-1 rounded">
+                <span className="text-xs font-mono font-bold uppercase bg-industrial-green/90 px-2.5 py-1 rounded">
                   OUTDOOR FITNESS
                 </span>
-                <span className="text-xs font-mono">{greenGymProducts.length} PRODUCTS</span>
+                <span className="text-xs font-mono font-bold">{greenGymProducts.length} PRODUCTS</span>
               </div>
             </div>
 
-            <div className="p-6 flex flex-col justify-between flex-grow space-y-4">
+            <div className="p-5 sm:p-6 flex flex-col justify-between flex-grow space-y-3">
               <div>
-                <h3 className="text-2xl font-bold text-industrial-charcoal group-hover:text-industrial-green transition-colors mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold text-industrial-charcoal group-hover:text-industrial-green transition-colors mb-1">
                   GREEN GYM EQUIPMENT
                 </h3>
-                <p className="text-sm text-industrial-textMuted leading-relaxed">
-                  Heavy-duty outdoor exercise equipment for public parks, housing societies, and municipal open gyms. Bodyweight resistance for all age groups.
+                <p className="text-xs sm:text-sm text-industrial-textMuted leading-relaxed">
+                  Heavy-duty outdoor exercise equipment for public parks, housing societies, and municipal gardens.
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-industrial-border/60">
+              <div className="pt-3 border-t border-industrial-border/60">
                 <Link
                   href="/green-gym"
-                  className="inline-flex items-center text-sm font-semibold text-industrial-green hover:text-industrial-greenDark group-hover:translate-x-1 transition-all"
+                  className="inline-flex items-center text-xs sm:text-sm font-bold text-industrial-green hover:text-industrial-greenDark transition-all"
                 >
-                  <span>Explore Green Gym Equipment</span>
+                  <span>Explore Green Gym</span>
                   <ArrowRight className="w-4 h-4 ml-1.5" />
                 </Link>
               </div>
