@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-jakarta: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --bg-industrial: #F6F7F2;
+  --text-industrial: #202620;
+  --green-industrial: #2E6B3F;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-jakarta), Inter, sans-serif;
+  background-color: #F6F7F2;
+  color: #202620;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle Industrial Engineering Blueprint Grid */
+.bg-industrial-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(123, 129, 124, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(123, 129, 124, 0.07) 1px, transparent 1px);
+}
+
+.bg-industrial-grid-dense {
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(46, 107, 63, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(46, 107, 63, 0.05) 1px, transparent 1px);
+}
+
+/* Technical Blueprint Line Accent */
+.border-blueprint-dash {
+  border-style: dashed;
+  border-width: 1px;
+  border-color: rgba(46, 107, 63, 0.3);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #EEF1EA;
+}
+::-webkit-scrollbar-thumb {
+  background: #7B817C;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2E6B3F;
+}
+
+/* Image zoom & hover transitions */
+.img-zoom-container {
+  overflow: hidden;
+}
+.img-zoom-container img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.img-zoom-container:hover img {
+  transform: scale(1.04);
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
