@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { MessageSquare, Phone, Send } from "lucide-react";
-import { getWhatsAppUrl, getPhoneUrl } from "@/data/company";
+import { MessageSquare, Send } from "lucide-react";
+import { getWhatsAppUrl } from "@/data/company";
 import { useQuoteModal } from "@/context/QuoteModalContext";
 
 export default function FloatingCTA() {
@@ -34,28 +34,21 @@ export default function FloatingCTA() {
       </div>
 
       {/* Mobile Sticky Action Bar (Fixed bottom bar on small viewports < 640px) */}
-      <div className="fixed bottom-0 left-0 right-0 z-30 sm:hidden bg-white/95 backdrop-blur-md border-t border-industrial-border p-2.5 grid grid-cols-3 gap-2 shadow-elevated">
-        <a
-          href={getPhoneUrl()}
-          className="flex items-center justify-center py-2.5 bg-industrial-mutedBg hover:bg-industrial-border text-industrial-text text-xs font-bold rounded-xl border border-industrial-border active:scale-95 transition-transform min-h-[44px]"
-        >
-          <Phone className="w-4 h-4 mr-1.5 text-industrial-green" />
-          Call
-        </a>
+      <div className="fixed bottom-0 left-0 right-0 z-30 sm:hidden bg-white/95 backdrop-blur-md border-t border-industrial-border p-2.5 grid grid-cols-2 gap-2.5 shadow-elevated">
         <a
           href={getWhatsAppUrl()}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center py-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold rounded-xl active:scale-95 transition-transform min-h-[44px]"
+          className="flex items-center justify-center py-3 bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-extrabold rounded-xl active:scale-95 transition-transform min-h-[44px]"
         >
           <MessageSquare className="w-4 h-4 mr-1.5 fill-white/20" />
-          WhatsApp
+          WhatsApp Direct
         </a>
         <button
           onClick={() => openQuoteModal()}
-          className="flex items-center justify-center py-2.5 bg-industrial-green hover:bg-industrial-greenDark text-white text-xs font-bold rounded-xl shadow-xs active:scale-95 transition-transform min-h-[44px]"
+          className="flex items-center justify-center py-3 bg-industrial-green hover:bg-industrial-greenDark text-white text-xs font-extrabold rounded-xl shadow-xs active:scale-95 transition-transform min-h-[44px]"
         >
-          <Send className="w-3.5 h-3.5 mr-1" />
+          <Send className="w-3.5 h-3.5 mr-1.5" />
           Get Quote
         </button>
       </div>

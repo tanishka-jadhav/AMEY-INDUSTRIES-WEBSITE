@@ -123,8 +123,8 @@ export default function CinematicHero({
               <span>All Weather Galvanized Steel</span>
             </div>
             <div className="flex items-center gap-2">
-              <PhoneCall className="w-3.5 h-3.5 text-industrial-freshGreen" />
-              <span>+91 9850573181</span>
+              <MessageSquare className="w-3.5 h-3.5 text-industrial-freshGreen" />
+              <span>Instant WhatsApp Support</span>
             </div>
           </div>
         </div>

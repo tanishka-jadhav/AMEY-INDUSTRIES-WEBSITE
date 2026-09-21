@@ -171,7 +171,7 @@ export default function EnquiryForm({
               <input
                 type="tel"
                 required
-                placeholder="+91 9850573181"
+                placeholder="+91 9876543210"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 className="w-full bg-industrial-bg border border-industrial-border rounded-xl px-3.5 py-2.5 text-sm text-industrial-text placeholder-industrial-textMuted focus:outline-none focus:border-industrial-green transition-colors"

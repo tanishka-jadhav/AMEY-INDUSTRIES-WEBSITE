@@ -197,24 +197,15 @@ export default function Navbar() {
               <ArrowRight className="w-4 h-4" />
             </button>
 
-            <div className="grid grid-cols-2 gap-2.5 text-xs pt-1">
-              <a
-                href={getPhoneUrl()}
-                className="flex items-center justify-center py-3 px-3 bg-industrial-mutedBg hover:bg-industrial-border text-industrial-text rounded-xl border border-industrial-border font-bold min-h-[44px]"
-              >
-                <Phone className="w-4 h-4 mr-1.5 text-industrial-green" />
-                Call
-              </a>
-              <a
-                href={getWhatsAppUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center py-3 px-3 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-xl font-bold min-h-[44px]"
-              >
-                <MessageSquare className="w-4 h-4 mr-1.5 fill-white/20" />
-                WhatsApp
-              </a>
-            </div>
+            <a
+              href={getWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center py-3.5 px-3 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-xl font-extrabold text-sm min-h-[44px]"
+            >
+              <MessageSquare className="w-4 h-4 mr-2 fill-white/20" />
+              <span>WhatsApp Direct</span>
+            </a>
           </div>
         </div>
       )}

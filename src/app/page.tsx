@@ -416,10 +416,13 @@ export default function HomePage() {
 
               <div className="pt-4 flex flex-wrap gap-4">
                 <a
-                  href={getPhoneUrl()}
-                  className="px-6 py-3 bg-industrial-green hover:bg-industrial-greenDark text-white font-semibold text-sm rounded shadow-sm transition-colors"
+                  href={getWhatsAppUrl("Hello AMEY INDUSTRIES, I would like to connect regarding outdoor gym equipment.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 bg-[#25D366] hover:bg-[#1EBE57] text-white font-semibold text-sm rounded shadow-sm transition-colors inline-flex items-center gap-2"
                 >
-                  Call Mr. Prasad Suresh Jadhav (+91 9850573181)
+                  <MessageSquare className="w-4 h-4 fill-current" />
+                  <span>Connect on WhatsApp</span>
                 </a>
                 <Link
                   href="/about"
@@ -516,13 +519,6 @@ export default function HomePage() {
             >
               <MessageSquare className="w-5 h-5 mr-2" />
               <span>WHATSAPP US</span>
-            </a>
-
-            <a
-              href={getPhoneUrl()}
-              className="px-8 py-4 bg-white text-industrial-charcoal hover:bg-industrial-mutedBg font-bold text-base rounded transition-all"
-            >
-              CALL +91 9850573181
             </a>
           </div>
         </div>

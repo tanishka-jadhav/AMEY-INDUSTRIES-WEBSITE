@@ -32,12 +32,12 @@ export const FAQS: FAQItem[] = [
   },
   {
     question: "How can I request a product quotation or catalogue?",
-    answer: "You can click on 'Get a Quote' on our website, fill out our quick enquiry form, call us directly at +91 9850573181, or send your requirements directly via WhatsApp.",
+    answer: "You can click on 'Get a Quote' on our website, fill out our quick enquiry form, or send your requirements directly via WhatsApp.",
     category: "general"
   },
   {
     question: "Can I send my project drawings or photos on WhatsApp for discussion?",
-    answer: "Yes, you can directly message us on WhatsApp (+91 9850573181) with your site requirements, photos, or project quantities for fast discussion with Mr. Prasad Suresh Jadhav.",
+    answer: "Yes, you can directly message us on WhatsApp with your site requirements, photos, or project quantities for fast discussion.",
     category: "general"
   }
 ];

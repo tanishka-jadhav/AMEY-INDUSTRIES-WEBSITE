@@ -122,7 +122,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         id: "USR-ADMIN-1",
         name: "Mr. Prasad Suresh Jadhav (Admin)",
         email: "psj.smil@gmail.com",
-        phone: "+91 9850573181",
+        phone: "",
         role: "admin",
         companyName: "AMEY INDUSTRIES",
       };

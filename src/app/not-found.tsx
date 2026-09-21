@@ -53,14 +53,6 @@ export default function NotFound() {
         {/* Direct Contact Support */}
         <div className="pt-6 border-t border-industrial-border/80 flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-industrial-textMuted">
           <a
-            href={getPhoneUrl()}
-            className="inline-flex items-center hover:text-industrial-green transition-colors"
-          >
-            <Phone className="w-3.5 h-3.5 mr-1.5 text-industrial-green" />
-            <span>Call +91 9850573181</span>
-          </a>
-          <span>•</span>
-          <a
             href={getWhatsAppUrl("Hello AMEY INDUSTRIES, I encountered a missing page on your website.")}
             target="_blank"
             rel="noopener noreferrer"

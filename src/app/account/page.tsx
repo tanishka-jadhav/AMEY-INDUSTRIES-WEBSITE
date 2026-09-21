@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { User, LogOut, MessageSquare, Phone, Send, Clock, ShieldCheck, ArrowRight } from "lucide-react";
+import { User, LogOut, MessageSquare, Building2, Send, Clock, ShieldCheck, ArrowRight } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import { useQuoteModal } from "@/context/QuoteModalContext";
 import { getPhoneUrl, getWhatsAppUrl } from "@/data/company";
@@ -111,18 +111,15 @@ export default function AccountPage() {
           <p className="text-xs text-industrial-textMuted">Chat directly with Prasad Suresh Jadhav.</p>
         </a>
 
-        <a
-          href={getPhoneUrl()}
-          className="p-5 bg-white border border-industrial-border rounded-2xl shadow-subtle hover:border-industrial-green transition-all text-left space-y-2 group"
-        >
+        <div className="p-5 bg-white border border-industrial-border rounded-2xl shadow-subtle text-left space-y-2">
           <div className="w-10 h-10 rounded-xl bg-industrial-mutedBg text-industrial-green flex items-center justify-center font-bold">
-            <Phone className="w-5 h-5" />
+            <Building2 className="w-5 h-5" />
           </div>
-          <h3 className="font-bold text-industrial-text text-base group-hover:text-industrial-green transition-colors">
-            Direct Phone Call
+          <h3 className="font-bold text-industrial-text text-base">
+            Nashik Manufacturing Plant
           </h3>
-          <p className="text-xs text-industrial-textMuted">+91 9850573181 • Nashik Factory</p>
-        </a>
+          <p className="text-xs text-industrial-textMuted">Nashik, Maharashtra, India</p>
+        </div>
       </div>
 
       {/* Submitted Enquiries Activity */}

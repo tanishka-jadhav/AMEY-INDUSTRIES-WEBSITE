@@ -98,7 +98,7 @@ export default function SignupPage() {
             <div className="relative">
               <input
                 type="tel"
-                placeholder="+91 9850573181"
+                placeholder="+91 9876543210"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 className="w-full bg-industrial-bg border border-industrial-border rounded-xl pl-10 pr-4 py-3 text-sm text-industrial-text placeholder-industrial-textMuted focus:outline-none focus:border-industrial-green transition-colors"

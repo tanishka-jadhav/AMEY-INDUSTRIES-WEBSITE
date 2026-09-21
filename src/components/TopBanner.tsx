@@ -23,14 +23,6 @@ export default function TopBanner() {
         {/* Right: Direct Contact Links */}
         <div className="flex items-center space-x-6">
           <a
-            href={getPhoneUrl()}
-            className="flex items-center hover:text-industrial-green font-semibold transition-colors"
-            title="Call AMEY INDUSTRIES"
-          >
-            <Phone className="w-3.5 h-3.5 mr-1.5 text-industrial-green" />
-            <span>{COMPANY_DETAILS.phone}</span>
-          </a>
-          <a
             href={getEmailUrl()}
             className="flex items-center hover:text-industrial-green font-medium transition-colors"
             title="Email AMEY INDUSTRIES"
@@ -45,7 +37,7 @@ export default function TopBanner() {
             className="flex items-center text-industrial-green hover:text-industrial-greenDark font-bold transition-colors"
           >
             <MessageSquare className="w-3.5 h-3.5 mr-1.5 text-industrial-green" />
-            <span>WhatsApp Enquiry</span>
+            <span>WhatsApp Direct</span>
           </a>
         </div>
       </div>

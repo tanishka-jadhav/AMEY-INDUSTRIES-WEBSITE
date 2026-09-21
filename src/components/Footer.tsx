@@ -104,26 +104,11 @@ export default function Footer() {
               <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
               <div>
                 <span className="block text-slate-200">{COMPANY_DETAILS.address}</span>
-                <a
-                  href={getGoogleMapsUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[11px] font-bold text-emerald-400 hover:underline inline-flex items-center mt-1"
-                >
-                  <span>Navigate on Google Maps</span>
-                  <ExternalLink className="w-3 h-3 ml-1" />
-                </a>
               </div>
             </li>
             <li className="flex items-center space-x-2.5">
               <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
               <span>Proprietor: {COMPANY_DETAILS.owner}</span>
-            </li>
-            <li>
-              <a href={getPhoneUrl()} className="flex items-center space-x-2.5 hover:text-emerald-400 transition-colors">
-                <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span className="font-bold text-white">{COMPANY_DETAILS.phone}</span>
-              </a>
             </li>
             <li>
               <a href={getEmailUrl()} className="flex items-center space-x-2.5 hover:text-emerald-400 transition-colors">
@@ -136,7 +121,7 @@ export default function Footer() {
                 href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2.5 text-emerald-400 hover:text-white transition-colors font-semibold"
+                className="flex items-center space-x-2.5 text-emerald-400 hover:text-white transition-colors font-bold text-sm"
               >
                 <MessageSquare className="w-4 h-4 shrink-0" />
                 <span>WhatsApp Fast Enquiry</span>

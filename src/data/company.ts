@@ -2,17 +2,17 @@ export const COMPANY_DETAILS = {
   name: "AMEY INDUSTRIES",
   legalName: "AMEY INDUSTRIES",
   owner: "Mr. Prasad Suresh Jadhav",
-  phone: "+91 9850573181",
-  phoneRaw: "+919850573181",
+  phone: "",
+  phoneRaw: "",
   whatsappNumber: "919850573181",
   email: "psj.smil@gmail.com",
-  address: "Plot No 9, Behind Sai Pranam Hotel, Near VTC Phata Gonde, Dumala, Nashik 422010",
-  fullAddress: "Plot No 9, Behind Sai Pranam Hotel, Near VTC Phata Gonde, Dumala, Nashik 422010, Maharashtra, India",
-  location: "Gonde Dumala, Nashik, Maharashtra",
+  address: "Nashik, Maharashtra, India",
+  fullAddress: "Nashik, Maharashtra, India",
+  location: "Nashik, Maharashtra",
   city: "Nashik",
   state: "Maharashtra",
   country: "India",
-  pincode: "422010",
+  pincode: "422001",
   establishedYear: "2015",
   tagline: "Green Gym & Outdoor Fitness Equipment, Playground Solutions & Industrial Fabrication",
   heroHeadline: "Outdoor Fitness & Play Equipment. Engineered for Real Spaces.",
@@ -20,7 +20,7 @@ export const COMPANY_DETAILS = {
 };
 
 export function getGoogleMapsUrl(): string {
-  const query = encodeURIComponent("Plot No 9 Behind Sai Pranam Hotel Near VTC Phata Gonde Dumala Nashik 422010");
+  const query = encodeURIComponent("Nashik Maharashtra India");
   return `https://www.google.com/maps/search/?api=1&query=${query}`;
 }
 
@@ -31,7 +31,7 @@ export function getWhatsAppUrl(customMessage?: string): string {
 }
 
 export function getPhoneUrl(): string {
-  return `tel:${COMPANY_DETAILS.phoneRaw}`;
+  return getWhatsAppUrl();
 }
 
 export function getEmailUrl(subject?: string): string {
